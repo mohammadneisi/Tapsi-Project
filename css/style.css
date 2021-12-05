@@ -1,0 +1,224 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@font-face {
+    font-family:'vazir';
+    src: url(/assets/font/Vazir-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family:'vazir';
+    src: url(/assets/font/Vazir.woff) format('woff');
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* root vatiable */
+:root{
+    --color-navbar:#F8F8F8;
+    --color-primary: #FF5722;
+    --color-secondary-light: #FFF6F2;
+    --color-secondary-dark: #FFA589;
+    --color-heading:#000 ;
+    --color-body:#333333;   
+    --color-white:#FFFFFF;
+
+}
+
+body{
+    font-family: vazir;
+    color: var(--color-body);
+    font-size: 1.4rem;
+}
+
+h1,h2,h3{
+
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 2.2rem;
+}
+
+@media screen and (min-width:1024px) {
+
+    body{
+        font-size: 1.8rem;
+    }
+    h1{
+        font-size: 5rem;
+    }
+    h2{
+        font-size: 3.5rem;
+    }
+}
+
+
+/* ...........button............ */
+
+.btn{
+    cursor: pointer;
+    font-family: vazir;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    outline: 0;
+    padding: 2rem 2.5rem;
+    border: 0;
+    border-radius: 8px;
+    margin: 1rem 0;
+    color: var(--color-white);
+
+}
+
+.btn--primary{
+    background-color: var(--color-primary);
+}
+.btn--secondary{
+    background-color: var(--color-secondary-dark);
+}
+
+.btn--block{
+    width: 100%;
+}
+
+@media screen and (min-width:1024px) {
+
+  .btn{
+      font-size: 1.6rem;
+  }
+  .btn--block{
+      font-size: 2rem;
+  }
+}
+
+
+/*............ badge........... */
+
+
+
+.badge{
+    margin:2rem;
+    display: inline-block;
+    background-color: var(--color-primary);   
+    border-radius:20px ;
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    padding: .2rem 1.3rem;
+    direction: ltr;
+    font-size: 1.2rem;
+    
+}
+
+.primary_badge{
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+@media screen and (min-width:1024px) {
+
+    .badge{
+        font-size: 1.4rem;
+    }
+}
+
+
+/*.......... list component......... */
+
+.list{
+    font-size: 1.4rem;
+    
+}
+/* 
+.list__item { 
+    
+    background-color: lightgray;
+    padding:0  2rem;
+} */
+
+.list--tick .list__item::before{
+    
+    content: "";
+    padding: 0 11px;
+    background:  url('../assets/image/checked.png') no-repeat ;
+    background-size: cover;
+    margin-left:.5rem;
+    
+    
+}
+
+
+.list--tick .list__item{
+    
+    padding-right:10px ;
+    margin-bottom: 1.5rem;
+    
+}
+
+@media screen and (min-width:1024px) {
+    .list--tick .list__item{
+        font-size: 1.8rem;
+        padding-right:10px ;
+        margin-bottom: 5rem;
+
+
+    }
+
+    .list--tick .list__item::before{
+        padding: 0 14px;
+
+    }
+}
+
+/* ........plan section.......... */
+
+
+.block--plan{
+    display: grid;
+    
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(3,200px);
+    gap: 2rem 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.plan{
+    background-color: lightgray;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 500px;
+}
+
+.card__body,
+.card__header{
+    padding:3rem 2.5rem;
+}
+
+.card__header{
+    background-color: var(--color-secondary-dark);
+}
+
+@media screen and (min-width:1024px) {
+    .block--plan{
+        height: 100vh;
+        display: grid;
+        text-align: center;    
+        grid-template-columns:repeat(3,1fr);
+        grid-template-rows:500px ;
+        align-content: center;
+    }
+}
